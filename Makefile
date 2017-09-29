@@ -9,6 +9,15 @@ tfplan:
 tfapply:
 	cd provisioning/terraform && terraform init && terraform apply
 
+tfrefresh:
+	cd provisioning/terraform && terraform init && terraform refresh
+
+tftaint:
+	cd provisioning/terraform && terraform init && terraform taint $(R)
+
+tfoutput:
+	cd provisioning/terraform && terraform init && terraform output
+
 tfdestroy:
 	cd provisioning/terraform && terraform init && terraform destroy
 
@@ -23,3 +32,6 @@ setup:
 	    -i hosts \
 		--extra-vars "my_instance_ip=$$my_instance_ip" \
         main.yml
+
+galaxy:
+	cd provisioning/ansible && ansible-galaxy install -r requirements.yml -p roles/

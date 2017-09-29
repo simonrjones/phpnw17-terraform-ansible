@@ -26,3 +26,5 @@
     - geerlingguy.nginx
     - geerlingguy.php
     - geerlingguy.composer
+    - carlosbuenosvinos.ansistrano-deploy
+    - carlosbuenosvinos.ansistrano-rollback

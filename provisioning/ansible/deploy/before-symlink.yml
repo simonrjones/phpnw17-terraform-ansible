@@ -1,0 +1,5 @@
+---
+- name: Composer install package libraries
+  command: composer install
+  args:
+    chdir: "{{ ansistrano_release_path.stdout }}"

@@ -1,0 +1,6 @@
+---
+- name: Restart Nginx
+  become_user: root
+  service:
+    name: "{{ php_fpm_daemon }}"
+    state: restarted

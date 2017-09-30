@@ -3,3 +3,6 @@ variable "aws_region" {
   description = "The default region to use on AWS"
 }
 
+variable "base_domain" {
+  default     = "phpnw17.karis.ch"
+}

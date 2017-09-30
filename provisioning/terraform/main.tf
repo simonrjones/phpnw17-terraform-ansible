@@ -10,6 +10,15 @@ resource "aws_instance" "my_instance" {
   }
 }
 
+resource "dnsimple_record" "bolt" {
+  domain = "${var.base_domain}"
+  name   = "bolt-srj"
+  type   = "A"
+  value  = "${aws_instance.my_instance.public_ip}"
+  ttl    = 60
+}
+
+
 resource "aws_key_pair" "my_key" {
   key_name   = "SRJ"
   public_key = "${file("~/.ssh/id_rsa.pub")}"
